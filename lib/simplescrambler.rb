@@ -1,3 +1,5 @@
+require_relative 'exceptions'
+
 class String
 	def scramble(min = 10, max = 100)
 		if max.class != Integer || min.class != Integer
