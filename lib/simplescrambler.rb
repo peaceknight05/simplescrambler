@@ -52,8 +52,26 @@ class Integer
 			raise CannotScrambleNumberDigit
 		elsif self.to_s.chars.count(self.to_s.chars[0]) == self.to_s.length
 			raise CannotScrambleNumberSame
+		elsif max.class != Integer || min.class != Integer
+			raise NotNumber
 		else
 			return self.to_s.scramble(min, max).to_i
+		end
+	end
+end
+
+class Float
+	def scramble(min = 10, max = 100)
+		if self.to_s.length == 1
+			raise CannotScrambleNumberDigit
+		elsif self.to_s.chars.count(self.to_s.chars[0]) == self.to_s.length
+			raise CannotScrambleNumberSame
+		elsif max.class != Integer || min.class != Integer
+			raise NotNumber
+		else
+			temp = self.to_s.chars.delete(".").join.scramble(min, max).chars
+			temp.insert((1 + rand(temp.length - 1)), ".")
+			return temp.join.to_f
 		end
 	end
 end
