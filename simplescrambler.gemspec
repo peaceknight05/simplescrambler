@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "A simple scrambler for strings, integers, floats and arrays. Number of scrambles can be specified."
   s.author      = ["Jonathan Tan"]
   s.email       = 'jonathantanatlol@gmail.com'
-  s.files       = ["lib/simplescrambler.rb", "lib/exceptions.rb]
+  s.files       = ["lib/simplescrambler.rb", "lib/exceptions.rb"]
   s.homepage    = 'https://github.com/peaceknight05/simplescrambler'
   s.license     = 'MIT'
 end
