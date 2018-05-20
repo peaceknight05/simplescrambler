@@ -71,7 +71,8 @@ class Float
 		elsif max.class != Integer || min.class != Integer
 			raise NotNumber
 		else
-			temp = self.to_s.chars.delete(".").join.scramble(min, max).chars
+			temp = self.to_s.chars.delete(".")
+			temp = temp.join.scramble(min, max).chars
 			temp.insert((1 + rand(temp.length - 1)), ".")
 			return temp.join.to_f
 		end
